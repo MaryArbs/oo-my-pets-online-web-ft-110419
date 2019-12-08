@@ -36,7 +36,7 @@ class Owner
     @@all.clear
   end
 
-  def cats  #cats returnsa a collection of all the cats that belong to the owner
+  def cats  #cats returns a a collection of all the cats that belong to the owner
    Cat.all.select {|cat|  cat.owner == self }
   end
 
@@ -75,6 +75,7 @@ class Owner
     #Do we have to put them together?
     #no
 
+<<<<<<< HEAD
     self.pets.each do |pet|
       pet.mood = "nervous"
       pet.owner = nil
@@ -91,5 +92,20 @@ class Owner
 
  def list_pets
   return "I have #{self.dogs.count} dog(s), and #{self.cats.count} cat(s)."
+=======
+    self.dogs.each do |dog|
+      dog.mood = "nervous"
+      dog.owner = nil
+    end
+
+    self.cats.each do |cat|
+      cat.mood = "nervous"
+      cat.owner = nil
+    end
+ end
+
+ def list_pets
+   @dogs.count
+>>>>>>> a0076e5d3afceacb65c7a0ef76155aabcce4bbbe
  end
 end
